@@ -5,14 +5,18 @@
     <title>Veil of Ignorance main game</title>
   </head>
   <body>
-      
+      <div id="intro">
+        <h2>Itroduction</h2>
+        <p id="intro-para">I would have wished a finer treasure to pledge my token to your name</p>
+      </div>
       <form>
           
           <fieldset id="govRevenue">
               <h4>Government Revenue</h4>
-              <input type="radio" name="rate" value="1" checked="checked"> No Taxes<br>
-              <input type="radio" name="rate" value="2" > Progressive Taxation<br>
-              <input type="radio" name="rate" value="3"> Class Warfare 
+              <input type="radio" name="rate" value="no taxes" checked="checked"> No Taxes<br>
+              <input type="radio" name="rate" value="progressive taxation" > Progressive Taxation<br>
+              <input type="radio" name="rate" value="flat tax" > Flat Tax<br>
+              <input type="radio" name="rate" value="class warfare"> Class Warfare 
           </fieldset>
           
           
@@ -124,7 +128,7 @@
         
         
     </script>
-    
+    <script src="/compute.js"></script>
 <!--
     /*
     Value of radio button:
