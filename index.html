@@ -7,7 +7,7 @@
   <body>
       <div id="intro">
         <h2>Itroduction</h2>
-          <p id="intro-para"><i>I would have wished a finer treasure to pledge my token to your name.</i> But I cannot. And this game is not a perfect representation of the world. Primarily, because it does not account for every possible contingency that makes life the undpredicatable convoluted interplay of events that is. However, considerable effort has been put to make the decisions as interdependetn as possible, and to tweak the scoring system so that it reflects these inner links</p>
+          <p id="intro-para"><i>I would have wished a finer treasure <br> to pledge my token to your name.</i><br> But I cannot. And this game is not a perfect representation of the world. Primarily, because it does not account for every possible contingency that makes life the undpredicatable convoluted interplay of events that is. However, considerable effort has been put to make the decisions as interdependetn as possible, and to tweak the scoring system so that it reflects these inner links</p>
       </div>
       <form>
 
@@ -44,16 +44,16 @@
 
           <fieldset id="disasterRelief">
               <h4>Disaster Relief</h4>
-              <input type="radio" name="dRelief" value="1" checked="checked"> All private<br>
-              <input type="radio" name="dRelief" value="2" >  Semi private<br>
-              <input type="radio" name="dRelief" value="3"> Collective
+              <input type="radio" name="dRelief" value="all_private" checked="checked"> All private<br>
+              <input type="radio" name="dRelief" value="semi_private" >  Semi private<br>
+              <input type="radio" name="dRelief" value="collective"> Collective
           </fieldset>
 
           <fieldset id="education">
               <h4>Education</h4>
-              <input type="radio" name="education" value="1" > All private, voluntary<br>
-              <input type="radio" name="education" value="2" checked="checked"> Public through high school<br>
-              <input type="radio" name="education" value="3">  Substantial government funding for financial aid, special education and gifted kids programs & scholarship
+              <input type="radio" name="education" value="all_private" > All private, voluntary<br>
+              <input type="radio" name="education" value="public_HS" checked="checked"> Public through high school<br>
+              <input type="radio" name="education" value="sub_gov_fund">  Substantial government funding for financial aid, special education and gifted kids programs & scholarship
           </fieldset>
 
           <fieldset id="military">
@@ -103,10 +103,14 @@
                 sick: sickRole[Math.floor(Math.random() * sickRole.length)],
                 legalStatus: immigrationRole[Math.floor(Math.random() * immigrationRole.length)],
                 abilityRole: abdiRole[Math.floor(Math.random() * abdiRole.length)],
-                empStatus: employmentStatus[Math.floor(Math.random() * employmentStatus.length)]
+                empStatus: employmentStatus[Math.floor(Math.random() * employmentStatus.length)],
+                karmaCards: {
+                  warCard:(Math.random()<0.15) ? true : false,
+                  disasterCard:(Math.random()<0.15) ? true : false
+                }
             }
 
-            console.log(character);
+            return (character);
         }
 
         //Fucntion that collects all the choices from the form && makes sure all the buttons have been checked
