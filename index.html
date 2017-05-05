@@ -7,9 +7,17 @@
   <body>
       <div id="intro">
         <h2>Itroduction</h2>
-        <p id="intro-para">I would have wished a finer treasure to pledge my token to your name</p>
+          <p id="intro-para"><i>I would have wished a finer treasure to pledge my token to your name.</i> But I cannot. And this game is not a perfect representation of the world. Primarily, because it does not account for every possible contingency that makes life the undpredicatable convoluted interplay of events that is. However, considerable effort has been put to make the decisions as interdependetn as possible, and to tweak the scoring system so that it reflects these inner links</p>
       </div>
       <form>
+          
+          <fieldset id="location">
+              <h4>Location</h4>
+              <input type="radio" name="loc" value="east coast" checked="checked">East Coast<br>
+              <input type="radio" name="loc" value="west coast" > West Coast<br>
+              <input type="radio" name="loc" value="mid west" > Mid West<br>
+              <input type="radio" name="loc" value="south"> South 
+          </fieldset>
           
           <fieldset id="govRevenue">
               <h4>Government Revenue</h4>
@@ -113,6 +121,7 @@
                     education:document.querySelector('input[name="education"]:checked').value,
                     military:document.querySelector('input[name="military"]:checked').value,
                     immigrationP:document.querySelector('input[name="immigr"]:checked').value,
+                    location:document.querySelector('input[name="loc"]:checked').value,
                     wAid:document.querySelector('input[name="wAid"]:checked').value
                 }   
             }
