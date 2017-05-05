@@ -10,92 +10,92 @@
           <p id="intro-para"><i>I would have wished a finer treasure to pledge my token to your name.</i> But I cannot. And this game is not a perfect representation of the world. Primarily, because it does not account for every possible contingency that makes life the undpredicatable convoluted interplay of events that is. However, considerable effort has been put to make the decisions as interdependetn as possible, and to tweak the scoring system so that it reflects these inner links</p>
       </div>
       <form>
-          
+
           <fieldset id="location">
               <h4>Location</h4>
               <input type="radio" name="loc" value="east coast" checked="checked">East Coast<br>
               <input type="radio" name="loc" value="west coast" > West Coast<br>
               <input type="radio" name="loc" value="mid west" > Mid West<br>
-              <input type="radio" name="loc" value="south"> South 
+              <input type="radio" name="loc" value="south"> South
           </fieldset>
-          
+
           <fieldset id="govRevenue">
               <h4>Government Revenue</h4>
               <input type="radio" name="rate" value="no taxes" checked="checked"> No Taxes<br>
               <input type="radio" name="rate" value="progressive taxation" > Progressive Taxation<br>
               <input type="radio" name="rate" value="flat tax" > Flat Tax<br>
-              <input type="radio" name="rate" value="class warfare"> Class Warfare 
+              <input type="radio" name="rate" value="class warfare"> Class Warfare
           </fieldset>
-          
-          
+
+
           <fieldset id="unemployment">
               <h4>Unemployment</h4>
               <input type="radio" name="employment" value="1" > No unemployment aid<br>
               <input type="radio" name="employment" value="2" checked="checked"> Moderate Assistance<br>
-              <input type="radio" name="employment" value="3"> Generous Assistance 
+              <input type="radio" name="employment" value="3"> Generous Assistance
           </fieldset>
-          
+
           <fieldset id="healthInsu">
               <h4>Health Insurance</h4>
               <input type="radio" name="hIns" value="1" > Private<br>
               <input type="radio" name="hIns" value="2" >  Medicare<br>
-              <input type="radio" name="hIns" value="3" checked="checked">  National Healthcare 
+              <input type="radio" name="hIns" value="3" checked="checked">  National Healthcare
           </fieldset>
-          
+
           <fieldset id="disasterRelief">
               <h4>Disaster Relief</h4>
               <input type="radio" name="dRelief" value="1" checked="checked"> All private<br>
               <input type="radio" name="dRelief" value="2" >  Semi private<br>
-              <input type="radio" name="dRelief" value="3"> Collective 
+              <input type="radio" name="dRelief" value="3"> Collective
           </fieldset>
-          
+
           <fieldset id="education">
               <h4>Education</h4>
               <input type="radio" name="education" value="1" > All private, voluntary<br>
               <input type="radio" name="education" value="2" checked="checked"> Public through high school<br>
-              <input type="radio" name="education" value="3">  Substantial government funding for financial aid, special education and gifted kids programs & scholarship  
+              <input type="radio" name="education" value="3">  Substantial government funding for financial aid, special education and gifted kids programs & scholarship
           </fieldset>
-          
+
           <fieldset id="military">
               <h4>Military</h4>
               <input type="radio" name="military" value="1" checked="checked"> Voluntary<br>
               <input type="radio" name="military" value="2" >  Draft<br>
           </fieldset>
-          
+
           <fieldset id="immigration">
               <h4>Immigration Policy</h4>
               <input type="radio" name="immigr" value="1" >Deport Them To Their Home Country<br>
               <input type="radio" name="immigr" value="2" checked="checked"> Guest Worker Program<br>
               <input type="radio" name="immigr" value="3"> No Borders
           </fieldset>
-          
+
           <fieldset id="worldAidCombattingGW">
               <h4>World Aid and combating global warming</h4>
               <input type="radio" name="wAid" value="1" checked="checked"> No regulation<br>
               <input type="radio" name="wAid" value="2" > International standards<br>
               <input type="radio" name="wAid" value="3"> No more fossil fuels
           </fieldset>
-          
+
       </form>
-      
+
       <button onclick="generateProfile  ()"> generateProfile </button>
       <button onclick="collectChoices()"> collectChoices() </button>
-     
+
       <div id="answers">
-          
+
       </div>
   </body>
     <script>
-        
+
         //function that generates a random user profile.
         function generateProfile() {
-            
+
             //Storing all the possible roles. Six options. So, simulates rolling a dice. Is there a better wat to analyze it?
             var incomeRole =["Poverty","Low Income","Middle Class","Middle Class","Middle Class","Wealthy"];
             var sickRole =["Yes","Yes","No","No","No","No"];
             var immigrationRole =["Legal","Legal","Illegal","Legal","Legal","Legal"];
             var abdiRole=["Challenged","Average","Average","Average","Average","Gifted"]//ability disability role
-            
+
             //Figure out how to award karma cards.
             var character = {
                 income: incomeRole[Math.floor(Math.random() * incomeRole.length)],
@@ -103,13 +103,13 @@
                 legalStatus: immigrationRole[Math.floor(Math.random() * immigrationRole.length)],
                 abilityRole: abdiRole[Math.floor(Math.random() * abdiRole.length)]
             }
-            
+
             console.log(character);
         }
-        
+
         //Fucntion that collects all the choices from the form && makes sure all the buttons have been checked
         function collectChoices(){
- 
+
             //This catch and try makes sure all the fields have been filled
             try{
                 //a variable that stores all of the decisions a person made about the policy
@@ -123,7 +123,7 @@
                     immigrationP:document.querySelector('input[name="immigr"]:checked').value,
                     location:document.querySelector('input[name="loc"]:checked').value,
                     wAid:document.querySelector('input[name="wAid"]:checked').value
-                }   
+                }
             }
             catch(err){
                     alert("looks like you have not filled all the fields");
@@ -131,11 +131,11 @@
 
             console.log(decisions);
 
-            
+
         }
-        
-        
-        
+
+
+
     </script>
     <script src="/compute.js"></script>
 <!--
@@ -144,8 +144,8 @@
     http://stackoverflow.com/questions/9618504/get-radio-button-value-with-javascript
     Random Element:
     http://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
-    
+
     */
 -->
-    
+
 </html>
