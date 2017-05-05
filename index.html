@@ -30,16 +30,16 @@
 
           <fieldset id="unemployment">
               <h4>Unemployment</h4>
-              <input type="radio" name="employment" value="1" > No unemployment aid<br>
-              <input type="radio" name="employment" value="2" checked="checked"> Moderate Assistance<br>
-              <input type="radio" name="employment" value="3"> Generous Assistance
+              <input type="radio" name="employment" value="no_un_aid" > No unemployment aid<br>
+              <input type="radio" name="employment" value="moderate_assistance" checked="checked"> Moderate Assistance<br>
+              <input type="radio" name="employment" value="generous_assistance"> Generous Assistance
           </fieldset>
 
           <fieldset id="healthInsu">
               <h4>Health Insurance</h4>
-              <input type="radio" name="hIns" value="1" > Private<br>
-              <input type="radio" name="hIns" value="2" >  Medicare<br>
-              <input type="radio" name="hIns" value="3" checked="checked">  National Healthcare
+              <input type="radio" name="hIns" value="private" > Private<br>
+              <input type="radio" name="hIns" value="medicare" >  Medicare<br>
+              <input type="radio" name="hIns" value="national_hc" checked="checked">  National Healthcare
           </fieldset>
 
           <fieldset id="disasterRelief">
@@ -94,14 +94,16 @@
             var incomeRole =["Poverty","Low Income","Middle Class","Middle Class","Middle Class","Wealthy"];
             var sickRole =["Yes","Yes","No","No","No","No"];
             var immigrationRole =["Legal","Legal","Illegal","Legal","Legal","Legal"];
-            var abdiRole=["Challenged","Average","Average","Average","Average","Gifted"]//ability disability role
+            var abdiRole=["Challenged","Average","Average","Average","Average","Gifted"];//ability disability role
+            var employmentStatus=["uNemployed","employed","uNemployed","employed","employed","employed"];
 
             //Figure out how to award karma cards.
             var character = {
                 income: incomeRole[Math.floor(Math.random() * incomeRole.length)],
                 sick: sickRole[Math.floor(Math.random() * sickRole.length)],
                 legalStatus: immigrationRole[Math.floor(Math.random() * immigrationRole.length)],
-                abilityRole: abdiRole[Math.floor(Math.random() * abdiRole.length)]
+                abilityRole: abdiRole[Math.floor(Math.random() * abdiRole.length)],
+                empStatus: employmentStatus[Math.floor(Math.random() * employmentStatus.length)]
             }
 
             console.log(character);
@@ -137,7 +139,7 @@
 
 
     </script>
-    <script src="/compute.js"></script>
+    <script src="./compute.js"></script>
 <!--
     /*
     Value of radio button:
