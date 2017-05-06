@@ -5,7 +5,7 @@
         //be changed if a better solution is found
 
 var testProfile = {income: "Middle Class", empStatus: "uNemployed", sick: "No", legalStatus: "Legal", abilityRole: "Average", karmaCards:{warCard: true, disasterCard: false}};
-var testChoices = {rate: "no taxes", employment: "employed", hIns: "national_hc", dRelief: "1", education: "all_private", immigrationP: "2", wAid: "1", military: "1"};
+var testChoices = {location: "east coast", rate: "no taxes", employment: "employed", hIns: "national_hc", dRelief: "semi_private", education: "all_private", immigrationP: "deport", wAid: "1", military: "voluntary"};
 
 function compute(pr, ch) {
     "use strict";//no idea what this does, but the linter told me to use this
@@ -74,7 +74,7 @@ function compute(pr, ch) {
 
     //DEALING WITH THE UNEMPLOYMENY POLICIES
     if (ch.employment === "no_un_aid") {
-      if (pr.empStatus === "uNemployed") {
+      if (pr.empStatus === "uNemployed" && pr.income != "Wealthy") {
         score = score - 1;
       }
       if (pr.empStatus === "employed") {
@@ -83,10 +83,10 @@ function compute(pr, ch) {
     }
 
     if (ch.employment === "moderate_assistance") {
-      if (pr.empStatus === "uNemployed") {
+      if (pr.empStatus === "uNemployed" && pr.income != "Wealthy") {
         score = score + 0.5;//??!
       }
-      if (pr.empStatus === "employed") {
+      if (pr.empStatus === "employed" && pr.income != "Wealthy") {
         score = score - 0;//??!
       }
     }
@@ -236,47 +236,100 @@ function compute(pr, ch) {
 
     //DEALING WITH EDUCATION
     //Factors: Choice. Income; gifted or not?
-    if (ch.education === "all_private" && pr.income === "Poverty" &&) {
+    if (ch.education === "all_private" && pr.income === "Poverty") {
       score = score - 1;
     }
-    if (ch.education === "all_private" && pr.income === "Low Income" &&) {
+    if (ch.education === "all_private" && pr.income === "Low Income") {
       score = score - 0.75;
     }
-    if (ch.education === "all_private" && pr.income === "Middle Class" &&) {
+    if (ch.education === "all_private" && pr.income === "Middle Class") {
       score = score - 0.25;
     }
 
-    if (ch.education === "public_HS" && pr.income === "Poverty" &&) {
+    if (ch.education === "public_HS" && pr.income === "Poverty" ) {
       score = score - 0.25;
     }
-    if (ch.education === "public_HS" && pr.income === "Low Income" &&) {
+    if (ch.education === "public_HS" && pr.income === "Low Income" ) {
       score = score - 0.1;
     }
-    if (ch.education === "public_HS" && pr.income === "Middle Class" &&) {
+    if (ch.education === "public_HS" && pr.income === "Middle Class" ) {
       score = score - 0;
     }
 
-    if (ch.education === "sub_gov_fund" && pr.income === "Poverty" &&) {
+    if (ch.education === "sub_gov_fund" && pr.income === "Poverty" ) {
       score = score + 1;
       if (pr.abilityRole === "Gifted") {
         score = score + 1;
       }
     }
-    if (ch.education === "sub_gov_fund" && pr.income === "Low Income" &&) {
+    if (ch.education === "sub_gov_fund" && pr.income === "Low Income" ) {
       score = score + 0.75;
       if (pr.abilityRole === "Gifted") {
         score = score + 0.75;
       }
     }
-    if (ch.education === "sub_gov_fund" && pr.income === "Middle Class" &&) {
+    if (ch.education === "sub_gov_fund" && pr.income === "Middle Class" ) {
       score = score + .25;
       if (pr.abilityRole === "Gifted") {
         score = score + 0.5;
       }
     }
 
+    //Dealing with military policy.
+    //Factors:choice; war card
+    if (ch.military === "draft" && pr.karmaCards.warCard === true) {
+      score = score - 2;
+    }
 
     //DEALING WITH IMMIGRATION
     //Factors: choice; legal status; gifted (if guest program)
+    if (ch.immigrationP === "deport" && pr.legalStatus === "Illegal") {
+      score = score - 2;
+    }
+    if (ch.immigrationP === "guest_w_prog" && pr.legalStatus === "Illegal") {
+      score = score + 1;//??!
+    }
+    if (ch.immigrationP === "no_borders" && pr.legalStatus === "Illegal") {
+      score = score + 1;
+    }
+    if (ch.immigrationP === "guest_w_prog" && pr.legalStatus === "Illegal" && pr.abilityRole === "Gifted") {
+      score = score + 1.5;//??!
+    }
+
+    //DEALING WITH GLOBAL WARMING
+    //Factors impacting: city of residence, choice, income,
+    if (ch.wAid === "no_regulation" && pr.income === "Middle Class") {
+      if (ch.location === "east coast" || ch.location === "west coast") {
+        score = score - 1.5;
+      }
+    }
+    if (ch.wAid === "no_regulation" && pr.income === "Low Income") {
+      if (ch.location === "east coast" || ch.location === "west coast") {
+        score = score - 1.75;
+      }
+    }
+    if (ch.wAid === "no_regulation" && pr.income === "Poverty") {
+      if (ch.location === "east coast" || ch.location === "west coast") {
+        score = score - 2;
+      }
+    }
+
+    if (ch.wAid === "no_more_ffuels" && pr.income === "Middle Class") {
+      if (ch.location === "east coast" || ch.location === "west coast") {
+        score = score - 0;
+      }
+    }
+    if (ch.wAid === "no_more_ffuels" && pr.income === "Low Income") {
+      if (ch.location === "east coast" || ch.location === "west coast") {
+        score = score - 0.;
+      }
+    }
+    if (ch.wAid === "no_more_ffuels" && pr.income === "Poverty") {
+      if (ch.location === "east coast" || ch.location === "west coast") {
+        score = score - 0.;
+      }
+    }
+
+
     return (score);
 }

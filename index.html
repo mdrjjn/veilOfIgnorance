@@ -58,27 +58,27 @@
 
           <fieldset id="military">
               <h4>Military</h4>
-              <input type="radio" name="military" value="1" checked="checked"> Voluntary<br>
-              <input type="radio" name="military" value="2" >  Draft<br>
+              <input type="radio" name="military" value="voluntary" checked="checked"> Voluntary<br>
+              <input type="radio" name="military" value="draft" >  Draft<br>
           </fieldset>
 
           <fieldset id="immigration">
               <h4>Immigration Policy</h4>
-              <input type="radio" name="immigr" value="1" >Deport Them To Their Home Country<br>
-              <input type="radio" name="immigr" value="2" checked="checked"> Guest Worker Program<br>
-              <input type="radio" name="immigr" value="3"> No Borders
+              <input type="radio" name="immigr" value="deport" >Deport Them To Their Home Country<br>
+              <input type="radio" name="immigr" value="guest_w_prog" checked="checked"> Guest Worker Program<br>
+              <input type="radio" name="immigr" value="no_borders"> No Borders
           </fieldset>
 
           <fieldset id="worldAidCombattingGW">
               <h4>World Aid and combating global warming</h4>
-              <input type="radio" name="wAid" value="1" checked="checked"> No regulation<br>
-              <input type="radio" name="wAid" value="2" > International standards<br>
-              <input type="radio" name="wAid" value="3"> No more fossil fuels
+              <input type="radio" name="wAid" value="no_regulation" checked="checked"> No regulation<br>
+              <input type="radio" name="wAid" value="international_st" > International standards<br>
+              <input type="radio" name="wAid" value="no_more_ffuels"> No more fossil fuels
           </fieldset>
 
       </form>
 
-      <button onclick="generateProfile  ()"> generateProfile </button>
+      <button onclick="generateProfile()"> generateProfile </button>
       <button onclick="collectChoices()"> collectChoices() </button>
 
       <div id="answers">
@@ -135,7 +135,7 @@
                     alert("looks like you have not filled all the fields");
             }
 
-            console.log(decisions);
+            return (decisions);
 
 
         }
