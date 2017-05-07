@@ -75,15 +75,25 @@
               <input type="radio" name="wAid" value="international_st" > International standards<br>
               <input type="radio" name="wAid" value="no_more_ffuels"> No more fossil fuels
           </fieldset>
-
       </form>
+      <button type="button" onclick="control()">Run</button>
 
-      <button onclick="generateProfile()"> generateProfile </button>
-      <button onclick="collectChoices()"> collectChoices() </button>
-
-      <div id="answers">
-
+      <div id ="displayCharacterDiv">
+        <p id="charIcome"></p>
+        <p id="charResidence"></p>
+        <p id="charSickRole"></p>
+        <p id="charImmRole"></p>
+        <p id="charabdRole"></p>
+        <p id="charEmpStat"></p>
+        <p id="charKarmaWar"></p>
+        <p id="charKarmaDisaster"></p>
       </div>
+      <div id="displayScore">
+        <p id="score"></p>
+      </div>
+      <div id="displayLogs">
+      </div>
+
   </body>
     <script>
 
@@ -144,6 +154,7 @@
 
     </script>
     <script src="./compute.js"></script>
+    <script src="./controlModule.js"></script>
 <!--
     /*
     Value of radio button:

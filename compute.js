@@ -533,7 +533,6 @@
               score = score - 1.25;
               logs.push("Lost 1.25 points for being middle class and having high-tax policies with a flat tax policy.");
             }
-            console.log(logs);
             //If Poor or low income, get rewarded for chosing high tax policies, or get srewed over if you chose
             //all the low gov involvement ones, hoping to be wealthy
             // if (pr.income === "Poverty" || pr.income === "Low Income") {
@@ -552,6 +551,8 @@
             //     score = score - 2;
             //   }
             // }
-            return (score);
+
+            //returns an array that has logs and score
+            return ([score,logs]);
 
         }
