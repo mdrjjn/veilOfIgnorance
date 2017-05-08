@@ -2,7 +2,7 @@
         //The appropriate way to do this, I think, is to loop through decisions and
         //evaluate every one based on the respected roles. Although, more than one role
         //can come into play when evaluating a decision. This is just a theory that should
-        //be changed if a better solution is found
+        //be changed if a better solution is found.
 
         var tP = {//test prfile
             income: "Poverty",
@@ -550,7 +550,7 @@
             //   if (taxPoints >= 18 && ch.rate === "no taxes") {
             //     score = score - 2;
             //   }
-            // }
+            // }Windows sucks very hard!!!!
 
             //returns an array that has logs and score
             return ([score,logs]);
