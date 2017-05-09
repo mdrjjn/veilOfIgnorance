@@ -28,4 +28,8 @@ function control() {
     document.getElementById("displayLogs").appendChild(para);
   }
 
+  //this wonderful line of code scroll to the bottom of the page to make sure all the logs are visible
+  //thanks to http://stackoverflow.com/questions/11715646/scroll-automatically-to-the-bottom-of-the-page
+  window.scrollTo(0,document.body.scrollHeight);
+
 }

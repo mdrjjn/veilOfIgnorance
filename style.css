@@ -3,11 +3,20 @@ body {
 }
 
 p {
-    color: white;
+    color: black;
     text-align: left;
 }
 
 i {
     color: pink;
     text-align: right;
+}
+
+button {
+    height: 90px;
+    width: 180px;
+    color: blue;
+    background-color: pink;
+    font-size: 34px;
+    font-style: strong;
 }
