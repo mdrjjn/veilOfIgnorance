@@ -9,9 +9,12 @@
   <body>
       <div id="intro">
         <h2>Itroduction</h2>
-          <p id="intro-para"><i>I would have wished a finer treasure <br> to pledge my token to your name.</i><br> But I cannot. And this game is not a perfect representation of the world. Primarily, because it does not account for every possible contingency that makes life the undpredicatable convoluted interplay of events that is. However, considerable effort has been put to make the decisions as interdependetn as possible, and to tweak the scoring system so that it reflects these inner links</p>
+        <i>I would have wished a finer treasure <br> to pledge my token to your name.</i><br>
+          <p id="intro-para"> But I cannot. Unfortunately, this simulation is not a perfect representation of the world. Primarily, because it does not account for every possible contingency that makes life the unpredictable convoluted interplay of events that is. So, if you discover that a certain choice of options does not interact the way it should, kindly forgive and do point out the discrepancy so to increase the utility of the game for the future generations. That being said, considerable effort has been put to make the decisions as interdependent as possible and to tweak the scoring system so that it reflects these inner links. A huge thank you to Mr. Jordan and Dr. Von who compiled the initial analog version of the game.</p>
       </div>
       <form>
+        <div class="twoInOne">
+
 
           <fieldset id="location">
               <h4>Location</h4>
@@ -28,7 +31,7 @@
               <input type="radio" name="rate" value="flat tax" > Flat Tax<br>
               <input type="radio" name="rate" value="class warfare"> Class Warfare
           </fieldset>
-
+</div>
 
           <fieldset id="unemployment">
               <h4>Unemployment</h4>
@@ -77,10 +80,13 @@
               <input type="radio" name="wAid" value="international_st" > International standards<br>
               <input type="radio" name="wAid" value="no_more_ffuels"> No more fossil fuels
           </fieldset>
+          <button id ="runButton" type="button" onclick="control()">Run</button>
+
       </form>
-      <button type="button" onclick="control()">Run</button>
-      <h4>Your Character</h4>
+      <div class="actionArea">
+
       <div id ="displayCharacterDiv">
+        <h4>Your Character</h4>
         <p id="charIcome"></p>
         <p id="charResidence"></p>
         <p id="charSickRole"></p>
@@ -90,14 +96,20 @@
         <p id="charKarmaWar"></p>
         <p id="charKarmaDisaster"></p>
       </div>
-      <h4>Your Score</h4>
+
       <div id="displayScore">
-        <p id="score"></p>
-      </div>
-      <h4>How you got your score</h4>
-      <div id="displayLogs">
+        <h4>Your Score</h4>
+        <h3 id="score"></h3>
       </div>
 
+      <div id="displayLogs">
+      </div>
+        </div>
+<footer>
+  <p>If you would like to edit the code and produce a more elaborate and aesthetically pleasing version of the game or are merely interested in the mechanics, do check out the code <a href="https://github.com/mdrjjn/veilOfIgnorance">here</a>.</p>
+  <p>The initial version of the game was developed by Max Drojjin '17</p>
+  <p>No Rights Reserved, apart from some of the human ones...</p>
+</footer>
   </body>
     <script>
 

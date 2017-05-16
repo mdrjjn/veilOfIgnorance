@@ -21,6 +21,11 @@ function control() {
   //Displaying the score
   document.getElementById("score").innerHTML = score.toFixed(2);;
   //populating the logs div
+  var header =document.createElement("H2");
+  var ht = document.createTextNode("How you got your score");
+  header.appendChild(ht);
+  document.getElementById("displayLogs").appendChild(header);
+
   for (i=0; i < logs.length; i++) {
     var para = document.createElement("P");                       // Create a <p> element
     var t = document.createTextNode(logs[i]);      // Create a text node

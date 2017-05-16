@@ -1,22 +1,93 @@
 body {
-    background-color: lightblue;
+    background-color: #c5cae6;
+    margin: 0;
+}
+#intro{
+  background-color: hsla(285, 18%, 91%, 0.69);
+width: 100%;
+padding: 10px;
+margin-bottom: 30px;
 }
 
+h2 {
+  margin: 0;
+  text-align: center;
+}
 p {
     color: black;
     text-align: left;
 }
 
 i {
-    color: pink;
+    color: #e2062d;
     text-align: right;
 }
 
-button {
-    height: 90px;
-    width: 180px;
-    color: blue;
-    background-color: pink;
-    font-size: 34px;
-    font-style: strong;
+input {
+  margin: 6px 0px 6px 0;
+}
+fieldset {
+  width: 44%;
+  float: left;
+  height: 150px;
+  margin: 5px;
+  border-radius: 7px;
+  background: #c57571;
+}
+
+#runButton {
+  margin: auto;
+  clear:both;
+  width: 30%;
+  display: block;
+  padding: 10px;
+  background-color: #93de8a;
+  border-radius: 7px;
+  font-size: 34px;
+  font-style: strong;
+  margin-top: 60px;
+  margin-bottom: 50px;
+}
+.actionArea {
+   clear:both;
+}
+
+#displayCharacterDiv, #displayLogs {
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 80%;
+  display: block;
+  padding: 10px;
+  background-color: #ded88a;
+  border-radius: 7px;
+}
+
+#displayScore {
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 80%;
+  display: block;
+  padding: 10px;
+  background-color: #ded88a;
+  border-radius: 7px;
+}
+
+
+footer {
+  background-color: hsla(285, 18%, 91%, 0.69);
+width: 100%;
+padding: 10px;
+
+}
+
+footer p {
+  padding: 0;
+  margin: 0;
+  color: grey;
+  font-size: 80%;
 }
