@@ -1,4 +1,5 @@
 function control() {
+  
   var profile = generateProfile();
   var choices = collectChoices();
   var run = compute(profile, choices);

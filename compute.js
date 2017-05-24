@@ -212,7 +212,7 @@
             }
             if (ch.hIns === "medicare" && pr.sick === "Yes" && pr.income === "Middle Class") { //??! impact disability?
                 score = score - 0.25;
-                logs.push("Gained 0.25 points for health insurance policy");
+                logs.push("Lost 0.25 points for health insurance policy");
             }
 
             //if you are only disabled
@@ -260,7 +260,7 @@
             //if you are only disabled
             if (ch.hIns === "national_hc" && pr.abilityRole === "Challenged" && pr.income === "Poverty") { //??! impact disability?
                 score = score + 1.5;
-                logs.push("Gained 0.5 points for health insurance policy");
+                logs.push("Gained 1.5 points for health insurance policy");
             }
             if (ch.hIns === "national_hc" && pr.abilityRole === "Challenged" && pr.income === "Low Income") { //??! impact disability?
                 score = score + 0.5;
@@ -278,7 +278,7 @@
             }
             if (ch.hIns === "national_hc" && pr.abilityRole === "Challenged" && pr.sick === "Yes" && pr.income === "Low Income") { //??! impact disability?
                 score = score + 1;
-                logs.push("Gained 1.75 point for health insurance policy");
+                logs.push("Gained 1 point for health insurance policy");
             }
             if (ch.hIns === "national_hc" && pr.abilityRole === "Challenged" && pr.sick === "Yes" && pr.income === "Middle Class") { //??! impact disability?
                 score = score + 1;
@@ -391,7 +391,7 @@
                 logs.push("Gained 0.75 points for education policy");
                 if (pr.abilityRole === "Gifted") {
                     score = score + 0.75;
-                    logs.push("Gained  additional 0.75 points for education policy and being gifted");
+                    logs.push("Gained  additional 0.75 points for education policy and being gifted, For scholarships and the like");
                 }
             }
             if (ch.education === "sub_gov_fund" && pr.income === "Middle Class") {
